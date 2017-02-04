@@ -8,6 +8,10 @@ const User = require('./models/users_model');
 const Issue = require('./models/issues_model');
 var request = require('request');
 
+// Using middleware
+
+var urlencodedParser = bodyParser.urlencoded({ extended: true }) //accepting forms
+var myParser = bodyParser.json({extended: false});
 
 // ES6 Promises
 
@@ -35,11 +39,6 @@ mongoose.connection.once('open',function(){
  });
 
 
-// Using middleware
-
-var urlencodedParser = bodyParser.urlencoded({ extended: false }) //accepting forms
-server.use(bodyParser.json());
-
 //setup view engine
 
 server.engine('hbs',hbs({extname:'hbs',defaultLayout:'layout', layoutsDir: __dirname + '/views/layouts'}));
@@ -50,6 +49,7 @@ server.set('views', __dirname + '/views')
 
 server.use('/', express.static('static'));
 server.use('/tickets/', express.static('static')); 
+server.use('/ticketsfor/', express.static('static')); 
 
 
 // setup routes
@@ -93,13 +93,41 @@ server.get('/api/tickets/:id',function(req,res){
 
 });
 
+// Fetching Tickets API by Assigned 
+
+server.get('/api/ticketsfor/:assigned',function(req,res){
+    var assignedTo = {ticketAssigned:req.params.assigned}
+    Issue.getIssueByAssigned(assignedTo,function(err,result){
+
+        if(err){
+            throw err
+        }
+        res.json(result);
+    });
+
+});
+
+// Adding Tickets 
+
+server.post('/api/tickets',myParser, function(req,res){
+    var issue = req.body;
+    
+    Issue.addIssue(issue,function(err,issue){
+
+        if(err){
+            throw err
+        }
+        res.json(issue);
+    });
+})
+
 // Updating Tickets
 
-server.put('/api/tickets/:id',function(req,res){
-    var change = req.body;
+server.put('/api/tickets/:id',myParser,function(req,res){
+    var issue = req.body;
     var id = req.params.id;
-    console.log(change);
-    Issue.updateIssue(id,change,{},function(err,result){
+    console.log(issue)
+    Issue.updateIssue(id,issue,{},function(err,result){
 
         if(err){
             throw err
@@ -123,11 +151,13 @@ server.get('/tickets',function(req,res){
         if(!error && response.statusCode == 200){
             var info = JSON.parse(body);
             res.render('tickets',{title:'tickets admin page',infoArr: info})
-        }; console.log(error);
+        } else {console.log(error)};
 
     });
         
 });
+
+// Fetching tickets by Id
 
 server.get('/tickets/:id',function(req,res){
         
@@ -142,6 +172,23 @@ server.get('/tickets/:id',function(req,res){
         });
     
 });
+
+// Fetching Tickets by Assigned to
+
+server.get('/ticketsfor/:assigned',function(req,res){
+        
+        
+        request('http://127.0.0.1:3000/api/ticketsfor/'+req.params.assigned,function(error,response,body){
+
+            if(!error && response.statusCode == 200) {
+                var ticketsByInfo = JSON.parse(body)  
+                res.render('tickets',{title:'tickets for' + req.params.assigned,infoArr:ticketsByInfo})
+
+            };
+        });
+    
+});
+
 
 //==========================================
 //              POST Requests

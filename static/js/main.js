@@ -1,11 +1,24 @@
-var request = require('request');
+function updateAssigned(id,newValue){
 
-var del = document.getElementById('delete')
+    $.ajax({
+        type:"PUT",
+        url:'http://127.0.0.1:3000/api/tickets/'+id,
+        dataType:'json',
+        data:JSON.stringify({
+            "ticketAssigned":newValue
+        }),
+        contentType:"application/json",
+        success: function(data){
+            console.log(data);
+            setTimeout(function(){
+                location.reload();
+            }, 100);
+            
+        },
+        error: function(jqXHR,textStatus,error){
+            console.log(error);
+        }
+    });
+    
+};
 
-del.addEventListener('click',function(){
-
-    var options = {
-        url: 'http://127.0.0.1:3000/tickets',
-        'method':'delete'
-    }
-});

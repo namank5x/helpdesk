@@ -9,5 +9,18 @@
         <p> IssueAssignedTo : {{IssueAssigned}}</p>
         <p> IssueDate : {{IssueDate}} </p>       
 
-    
+        <p> Assign Ticket To : </p>
+        
+        
+         <select onchange="updateAssigned({{IssueId}},this.value)">
+                 <option value="none"></option>
+                <option value="naman">Naman</option>
+                <option value="admin">Admin</option>
+          </select>
+
+          
 </div>
+
+<script>
+    
+</script>

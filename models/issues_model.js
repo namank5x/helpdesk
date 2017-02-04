@@ -39,7 +39,7 @@ const IssueSchema = new Schema({
     },
     ticketAssigned:{
         type: String,
-        default:'Admin'
+        default:'admin'
     },
     ticketDate:{
         type: String,
@@ -56,7 +56,7 @@ var IssueModel = module.exports.IssueModel = mongoose.model('issue',IssueSchema)
 
 module.exports.getIssues = function(callback,limit){
 
-    IssueModel.find(callback).limit(limit)
+    IssueModel.find(callback).limit(limit);
 
 };
 
@@ -64,16 +64,33 @@ module.exports.getIssues = function(callback,limit){
 
 module.exports.getIssueById = function(id,callback){
 
-    IssueModel.findOne({ticketId:id},callback)
+    IssueModel.findOne({ticketId:id},callback);
+};
+
+// Get Issue by Assigned
+
+module.exports.getIssueByAssigned = function(assigned,callback){
+
+    IssueModel.find(assigned,callback);
+};
+
+
+// Add Issue 
+
+module.exports.addIssue = function(issue,callback){
+    IssueModel.create(issue,callback);
 };
 
 // Update Issue
 
-module.exports.updateIssue = function(id,change,options,callback){
+module.exports.updateIssue = function(id,issue,options,callback){
     var query = {ticketId:id};
     var update = {
-        
+        "ticketAssigned":issue.ticketAssigned
     }
 
     IssueModel.findOneAndUpdate(query,update,options,callback);
 };
+
+// Delete Issue
+
