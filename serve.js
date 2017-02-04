@@ -227,7 +227,3 @@ server.post('/', urlencodedParser, function(req,res){
     res.render('index',{title:'Thank You', ticket: y})
 });
 
-//==========================================
-//              Update Requests
-//==========================================
-
