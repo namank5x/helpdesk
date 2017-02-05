@@ -1,26 +1,24 @@
-<div class="each-container">
-    
-    
-        <p> IssueHeading : {{IssueHeading}} </p>
-        <p> IssueEmail : {{IssueEmail}}</p>
-        <p> IssueId : {{IssueId}} </p>
-        <p> IssueDescription : {{IssueDescription}}</p>
-        <p> IssueStatus : {{IssueStatus}} </p>
-        <p> IssueAssignedTo : {{IssueAssigned}}</p>
-        <p> IssueDate : {{IssueDate}} </p>       
-
-        <p> Assign Ticket To : </p>
+<div class="main-container">
+        <div class="each-container">
         
         
-         <select onchange="updateAssigned({{IssueId}},this.value)">
-                 <option value="none"></option>
-                <option value="naman">Naman</option>
-                <option value="admin">Admin</option>
-          </select>
+                <p><h3 class="title-heading"> Heading :</h3> {{IssueHeading}} </p> <br /> <hr />
+                <p><h3> Email : </h3>{{IssueEmail}}</p><br /> <hr />
+                <p> <h3>Ticket Id : </h3>{{IssueId}} </p><br /><hr />
+                <p><h3> Description :</h3> {{IssueDescription}}</p><br /><hr />
+                <p><h3> Status : </h3>{{IssueStatus}} </p><br /><hr />
+                <p><h3> Assigned To :</h3> {{IssueAssigned}}</p><br /><hr />
+                <p><h3> Date :</h3> {{IssueDate}} </p><br />    <hr />   
 
-          
+                <h3> Assign Ticket To : </h3>
+                
+                <p>
+                <select class="select-box" onchange="updateAssigned({{IssueId}},this.value)">
+                        <option value="none"></option>
+                        <option value="naman">Naman</option>
+                        <option value="admin">Admin</option>
+                </select>
+                <hr />
+                
+        </div>
 </div>
-
-<script>
-    
-</script>

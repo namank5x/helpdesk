@@ -1,11 +1,29 @@
+<div class="main-container">
+
 <div class = "ticketListContainer">
 
-    <div class="ticket">
-        <div class="ticket Heading">
-           {{#each infoArr}} <h2> <a href=/tickets/{{ticketId}}>  {{ticketHeading}} </a> | {{ticketStatus}} | {{ticketDate}} | {{ticketAssigned}} | {{ticketId}} </h2> {{/each}}
-        </div>
+     <div class="pure-g">
+         
+            <div class="pure-u-2-5"><h3 class="title-heading"> Heading </h3> <hr /></div>
+            <div class="pure-u-1-8" ><h3>  Status </h3><hr /></div> 
+            <div class="pure-u-1-8"> <h3> Date </h3> <hr /></div> 
+            <div class="pure-u-1-8"><h3>Assigned to </h3> <hr /></div>
+            <div class="pure-u-1-8"><h3>Ticket Id </h3> <hr /></div> 
+         
     </div>
 
+    {{#each infoArr}}
 
+    <div class="pure-g">
+            <div class="pure-u-2-5"> <a href=/tickets/{{ticketId}}>{{ticketHeading}}</a><hr /> </div> <hr />
+            <div class="pure-u-1-8" ><p>  {{ticketStatus}}</p><hr /> </div> <hr />
+            <div class="pure-u-1-8" ><p>{{ticketDate}}</p><hr /></div><hr />
+            <div class="pure-u-1-8"><p>{{ticketAssigned}}</p><hr /> </div> <hr />
+            <div class="pure-u-1-8"><p>{{ticketId}}</p><hr /> </div> <hr />
+    </div>
+
+    {{/each}}
+
+</div>
 
 </div>

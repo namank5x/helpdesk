@@ -105,8 +105,9 @@ textarea {
         height: 100px;
         width: 100%;
         margin: 0 auto;
-        background-color: #000;
+        background-color: #009688;
         text-align: center;
+        font-family: 'Varela Round', sans-serif;
     }
 
     .nav-menu{
@@ -133,15 +134,26 @@ textarea {
         height: 100px;
         width: 100%;
         margin: 0 auto;
-        background-color: #000;
+        background-color: #009688;
         text-align: center;
         color: white;
-        margin-top:100px;
+        margin-top:143px;
+        font-family: 'Varela Round', sans-serif;
     }
 
     .footer p{
         align-self: center;
         margin: 0 auto;
+        
+    }
+
+    .footer a{
+        color: white;
+        text-decoration: none;
+    }
+
+    .footer a:hover{
+        border-bottom: 1px solid white;
     }
 
     .container{
@@ -159,11 +171,12 @@ textarea {
     .send-ticket-container{
 
         width: 50%;
-        height: 500px;
+        height: auto;
         margin: 0 auto;
-        margin-top:50px;
-        border: 5px solid #000;
+        margin-top:100px;
         text-align: center;
+        font-family: 'Varela Round', sans-serif;
+        color: #009688;
 
     }
 
@@ -174,12 +187,14 @@ textarea {
         margin-top: 20px;
         text-align: center;
         
+        
+        
     }
 
     .send-ticket-form input{
         width: 70%;
-        height: 35px;
-        border: 3px solid #000;
+        height: 45px;
+        border: 3px solid #009688;
         border-radius: 4px;
         text-align: center;
         margin: 10px;
@@ -189,8 +204,8 @@ textarea {
 
     .send-ticket-form textarea{
         width: 70%;
-        height: 60px;
-        border: 3px solid #000;
+        height: 100px;
+        border: 3px solid #009688;
         border-radius: 4px;
         text-align: center;
         margin: 10px;
@@ -200,8 +215,21 @@ textarea {
     }
 
     .send-ticket-form input[type=button]{
-        width: 40%;
-        height: 40px;
+        width: 100%;
+        height: 70px;
+    }
+
+    .send-ticket-form .submit-button{
+        width:72%;
+        height: 60px;
+        background-color: #009688;
+        color: white;
+        
+    }
+
+    .send-ticket-form .submit-button:hover{
+        background-color: white;
+        color: #009688;
     }
 
 /* ==========================================================================
@@ -210,12 +238,42 @@ textarea {
 
    .ticketListContainer{
 
-        width: 50%;
+        width: 70%;
         height: auto;
         margin: 0 auto;
         margin-top:50px;
-        text-align: center;
+        font-family: 'Varela Round', sans-serif;
+        font-size: 22px;
+        color: #404040;
    }
+
+   .ticketListContainer a{
+       text-decoration: none;
+       color: #3f51b5;
+       font-weight: bold;
+   }
+
+   .ticketListContainer a:hover{
+       border-bottom: 2px solid #3f51b5;
+   }
+
+   .pure-g [class *= "pure-u"] {
+        /* Set your content font stack here: */
+        font-family: 'Varela Round', sans-serif;
+    }
+
+    .pure-g h3{
+        text-align: center;
+        color: #009688;
+    }
+
+    .pure-g p{
+        text-align: center;
+    }
+
+    .pure-g .title-heading{
+        text-align: left;
+    }
 
 /* ==========================================================================
    Each Ticket Page
@@ -226,11 +284,38 @@ textarea {
     height: auto;
     margin: 0 auto;
     margin-top: 50px;
-    font-size: 20px;
-
+    font-size: 23px;
+    font-family: 'Varela Round', sans-serif;
+    color: #404040;
    }
 
+   .each-container p{
+       display: inline;
+   }
 
+   .each-container h3{
+       display: inline;
+       color: #009688;
+   }
+   .vals{
+       text-align: center;
+   }
+
+   .select-box {
+       width:150px;
+       height: 30px;
+       background: transparent;
+       border-radius: 4px;
+       
+   }
+
+   .select-box ::selection{
+       border-radius: 4px;
+   }
+
+   .main-container{
+       margin-bottom: -80px;
+   }
 
 
 /* ==========================================================================
