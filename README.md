@@ -31,13 +31,13 @@ Shown below is the administrator dashboard this is where the administrator is ab
 
 ![](images/admin.jpg)<br />
 <br />
-This is how our admin page will look like, This is where all the queries go, All the headings are hyperlinks to the the issue page shown below where the admin can also assign the query to other departments, in the image you can see the assigned to tab which shows, who the query is assigned to.
+This is how our admin page will look like, This is where all the queries go, All the headings are hyperlinks to the issue page shown below where the admin can also assign the query to other departments, in the image you can see the assigned to tab which shows, who the query is assigned to.
 
-![ticket_page](images/ticket_page.jpg)<br />
+![](images/tickets_page.jpg)<br />
 
 This is where admin will see the ticket details and be able to assign the tickets to the respective departments as shown. The ticket details page for the client will be exactly the same except they won't be able to change who the ticket is assigned to
 
-Note that the URL for the ticket page is set to ``` http://127.0.0.1:3000/tickets/17358 ``` for convinience. This helps the admin directly visit the ticket page by accessing the ticket number
+Note that the URL for the ticket page is set to ``` http://127.0.0.1:3000/tickets/17358 ``` for convenience. This helps the admin directly visit the ticket page by accessing the ticket number
 
 ## How to run the App
 
