@@ -4,7 +4,7 @@ Welcome to Helpdesk, this is a demo application for my project to build a helpde
 on your computer
 
 1. [How it works](https://github.com/namkam5/helpdesk#how-it-works)
-2. [How to run the application]()
+2. [How to run the application](https://github.com/namkam5/helpdesk#how-to-run-the-app)
 
 
 ## How it works
