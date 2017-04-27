@@ -8,6 +8,10 @@ on your computer
 ## How it works
 ### Client Side
 <br />
+
+the front page when you start the demo at ```127.0.0.1:3000 ```
+<br />
+
 ![the_front_page](images/front_page.jpg)
 <br /><br />
 
