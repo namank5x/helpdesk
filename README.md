@@ -47,7 +47,7 @@ To run the app the prerequisite is you need to have MongoDB installed on your ma
 
 ### Install NodeJS
 
-This app is built on top of NodeJS so that is also a prerequisite for to run the application. If you don't already have NodeJS installed you can visit their [installation page](https://nodejs.org/en/download/) and follow the instructions depending upon the server you are running.
+This app is built with Node and Express so that is also a prerequisite for to run the application. If you don't already have NodeJS installed you can visit their [installation page](https://nodejs.org/en/download/) and follow the instructions depending upon the server you are running.
 
 ### Run the app
 
